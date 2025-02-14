@@ -21,7 +21,7 @@ The project is structured with **modular components** using **CMake** for buildi
 This project is part of a **maze generation tutorial** that walks through the code step by step. It is considered beginner friendly but has some advance concepts to expose to young programmers.
 
 🎥 **Watch the full tutorial on YouTube:**  
-[➡️ Click here to watch](YOUR_YOUTUBE_VIDEO_LINK)
+[➡️ Click here to watch](https://youtu.be/mGdhCyzlcX4)
 
 ## Installation
 
