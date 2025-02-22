@@ -9,10 +9,10 @@
  * This source code is licensed under the MIT License. For more details, see
  * the LICENSE file in the root directory of this project.
  *
- * Version: v1.0.0
+ * Version: v1.0.1
  * Author: Ghost
  * Created On: 02-14-2025
- * Last Modified: 02-14-2025
+ * Last Modified: 02-21-2025
  *****************************************************************************/
 
 #include "maze_gen.h"
@@ -173,7 +173,7 @@ namespace MazeGen {
         */
 
         std::stringstream ss;
-        ss << "Viewing \'" << m_CurrentMaze.m_Name << "\' maze!\n" << std::endl;
+        ss << "Viewing \'" << m_CurrentMaze.m_Name << "\' maze!\n\n"; // CHANGE - Removed endl - \n is better on performance
         
         for (const auto& row : m_CurrentMaze.m_Grid) {
             for (char cell : row) {

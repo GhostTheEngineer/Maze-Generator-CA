@@ -9,10 +9,10 @@
  * This source code is licensed under the MIT License. For more details, see
  * the LICENSE file in the root directory of this project.
  *
- * Version: v1.0.0
+ * Version: v1.0.1
  * Author: Ghost
  * Created On: 02-14-2025
- * Last Modified: 02-14-2025
+ * Last Modified: 02-21-2025
  *****************************************************************************/
 
 #include "driver.h"
@@ -31,12 +31,8 @@ namespace MazeGen {
     #endif
     }
 
-    inline void clearInputBuffer() {
-        // Inline functions are not real functions, wherever this is called, the contents in this scope are copied to that location.
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
-
-    inline bool validateInput() {
+    // CHANGE - removed inline keyword. They have no effect due to compiler optimization which will do what inline is attempting to do.
+    bool validateInput() {
         // Inline functions are not real functions, wherever this is called, the contents in this scope are copied to that location.
         if (std::cin.fail()) {
             std::cin.clear();
@@ -112,7 +108,7 @@ Choose an option: )";
 
             case 4: // Save Current Maze to File
                 {
-                    clearInputBuffer(); // handles removing the '\n' character left in input buffer from std::cin above
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // handles removing the '\n' character left in input buffer from std::cin above
                     std::string filename;
                     std::cout << "Enter filename to save: ";
                     std::getline(std::cin, filename);  // allow white spaces
@@ -122,7 +118,7 @@ Choose an option: )";
 
             case 5: // Save Maze from File to Current Maze
                 {
-                    clearInputBuffer(); // handles removing the '\n' character left in input buffer from std::cin above
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // handles removing the '\n' character left in input buffer from std::cin above
                     std::string filename;
                     std::cout << "Enter filename to load: ";
                     std::getline(std::cin, filename); // allow white spaces
